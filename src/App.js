@@ -1,9 +1,13 @@
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Profil from "./components/Profil"
+
 function App() {
   return (
-    <div className="App">
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <div>
+      {/* <Login /> */}
+      {/* <Register /> */}
+      <Profil />
     </div>
   );
 }
