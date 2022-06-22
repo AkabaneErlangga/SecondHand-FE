@@ -1,13 +1,8 @@
-import Login from "./components/Login";
-import Register from "./components/Register";
-// import Profil from "./components/Profil"
-
+import Dashboard from "./pages/Dashboard";
 function App() {
   return (
-    <div>
-      {/* <Login /> */}
-      <Register />
-      {/* <Profil /> */}
+    <div className="App">
+      <Dashboard />
     </div>
   );
 }
