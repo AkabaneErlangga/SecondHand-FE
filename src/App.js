@@ -1,13 +1,14 @@
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Profil from "./components/Profil"
+import Profile from "./components/Profile";
+
 
 function App() {
   return (
     <div>
       {/* <Login /> */}
       {/* <Register /> */}
-      <Profil />
+      <Profile />
     </div>
   );
 }
