@@ -3,6 +3,7 @@ import React from 'react'
 import {faBell} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faBox} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -56,13 +57,13 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a
+              <Link to="/profile"
                 className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full"
                 href="#pablo"
               >
                 <FontAwesomeIcon icon={faUser} size={'2x'} className="mr-1 leading-lg opacity-75 hidden md:block"/>
                 <h5 className='lg:hidden'>Profile</h5>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

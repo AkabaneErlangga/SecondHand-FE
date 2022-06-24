@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'register': "url('~/public/assets/ImgLgn.png')"
-      }
+      },
       colors: {
         darkblue05: "#4B1979",
         darkblue04: "#7126B5",
