@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationBar from '../Pages/NavigationBar'
+import NavigationBar from '../components/NavigationBar'
 
 // import Camera from '../assets/fi_camera.png'
 // import Arrowleft from '../assets/fi_arrow-left.png'
