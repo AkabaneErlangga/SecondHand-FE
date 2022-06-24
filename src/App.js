@@ -1,10 +1,8 @@
-import Profile from "./Pages/Profile";
-
-
+import Dashboard from "./pages/Dashboard";
 function App() {
   return (
-    <div>
-      <Profile />
+    <div className="App">
+      <Dashboard />
     </div>
   );
 }
