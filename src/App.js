@@ -1,9 +1,12 @@
+import ProductPageBuyer from './pages/ProductPageBuyer';
+import ProductPage from './pages/ProductPage';
+
+
 function App() {
   return (
     <div className="App">
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <ProductPage/>
+      <ProductPageBuyer/>
     </div>
   );
 }
