@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -12,6 +13,23 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+=======
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Profile from "./components/Profile";
+import InfoProduk from "./components/InfoProduk";
+import InfoPenawar from "./components/InfoPenawar";
+
+
+function App() {
+  return (
+    <div>
+      {/* <Login /> */}
+      {/* <Register /> */}
+      {/* <Profile /> */}
+      {/* <InfoProduk /> */}
+      <InfoPenawar/>
+>>>>>>> Stashed changes
     </div>
   );
 }
