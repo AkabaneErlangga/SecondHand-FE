@@ -1,9 +1,10 @@
-<<<<<<< Updated upstream
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import InfoPenawar from "./pages/InfoPenawar"
+import InfoProduk from "./pages/InfoProduk";
 function App() {
   return (
     <div className="App">
@@ -12,24 +13,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/info-penawar" element={<InfoPenawar />} />
+        <Route path="/info-product" element={<InfoProduk />} />
       </Routes>
-=======
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Profile from "./components/Profile";
-import InfoProduk from "./components/InfoProduk";
-import InfoPenawar from "./components/InfoPenawar";
-
-
-function App() {
-  return (
-    <div>
-      {/* <Login /> */}
-      {/* <Register /> */}
-      {/* <Profile /> */}
-      {/* <InfoProduk /> */}
-      <InfoPenawar/>
->>>>>>> Stashed changes
     </div>
   );
 }

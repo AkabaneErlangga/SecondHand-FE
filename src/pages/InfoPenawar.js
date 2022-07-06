@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import NavigatinPenawar from '../Pages/NavigatinPenawar';
-import Modal from '../Pages/Modal';
-import ModalStatus from '../Pages/ModalStatus';
+import NavigatinPenawar from '../components/NavigatinPenawar';
+import Modal from './Modal';
+import ModalStatus from './ModalStatus';
 
 const InfoPenawar = () => {
     const [nav, setNav] = useState(false);

@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationProduk from '../Pages/NavigationProduk';
+import NavigationProduk from '../components/NavigationProduk';
 
 
 const InfoProduk = () => {
