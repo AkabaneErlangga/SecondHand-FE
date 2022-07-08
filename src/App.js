@@ -5,8 +5,9 @@ import ProductPage from './pages/ProductPage';
 function App() {
   return (
     <div className="App">
-      <ProductPage/>
+      
       <ProductPageBuyer/>
+      <ProductPage/>
     </div>
   );
 }

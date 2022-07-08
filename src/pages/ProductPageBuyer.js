@@ -10,7 +10,7 @@ function ProductPageBuyer() {
         <div>
 
 <div
-                className="flex flex-1 justify-center mobile:flex-col mobile:mt-3 mobile:p-3">
+                className="flex flex-1 ml-[120px] mobile:flex-col mobile:relative mobile:mt-3 mobile:p-2 mobile:-ml-[15px]">
                 {/* <div className="flex flex-1 items-center justify-center">
                     <img
                         src="/assets/Jamcasio.png"
@@ -20,7 +20,7 @@ function ProductPageBuyer() {
                 <Carousel/>
 
                 <div
-                    className="flex flex-1 items-center justify-items-center flex-col mt-10 shadow-around mobile:items-center ">
+                    className="flex flex-1 items-center mobile:absolute justify-items-center flex-col mt-10 shadow-around mobile:items-center ml-5 ">
                     <DeskriptionHarga/>
                     <div>
                     <ProfilSeller/>

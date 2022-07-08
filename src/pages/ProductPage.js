@@ -9,7 +9,7 @@ function ProductPage() {
         <div>
 
             <div
-                className="flex flex-1 justify-center mobile:flex-col mobile:mt-3 mobile:p-3">
+                className="flex flex-1 justify-center pl-[150px] mobile:flex-col mobile:mt-3 mobile:p-3 ">
                 
                     <Carousel/>
                 
@@ -17,7 +17,7 @@ function ProductPage() {
 
 
                 <div
-                    className="flex flex-1 items-center justify-items-center flex-col mt-10 shadow-around mobile:items-center ">
+                    className="flex flex-1 items-center justify-items-center flex-col mt-10 shadow-around mobile:items-center  ">
                     <DeskriptionHargaSeller/>
                     <div>
                         <ProfilSeller/>

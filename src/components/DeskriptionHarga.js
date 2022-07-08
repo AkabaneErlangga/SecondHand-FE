@@ -6,18 +6,18 @@ function DeskriptionHarga() {
 
 
     return (
-        <div>
-            <div className="shadow-md px-2 py-2">
-                <h1 className="title text-[40px] mobile:text-[30px]">Jam Tangan Casio</h1>
-                <p className="pr-[4rem] text-justify mt-1 mobile:pr-0 color-grey-600">
+        <div >
+            <div className="shadow-md w-[330px] h-[220px] pl-[24px] pt-5 -ml-[220px] mt-10 mobile:mt-[20px] mobile:relative mobile:w-72 mobile:-ml-5 mobile:-mt-[100px] ">
+                <h1 className="title text-[24px] mobile:text-[14px]">Jam Tangan Casio</h1>
+                <p className="pr-[4rem] text-justify mt-1 text-[] mobile:pr-0 color-grey-600 mobile:text-[10px]">
                     Aksesoris
                 </p>
-                <p className="mt-1 text-3xl">
+                <p className="mt-1 text-2xl mobile:text-[14px]">
                     <b>Rp 250.000</b>
                 </p>
 
                 <Button
-                    className="ml-10 mb-3.5 mt-6  px-4 py-2 w-60 bg-purple-600 border-solid border-2 rounded-lg"
+                    className="ml-10 mb-3.5 mt-6 ml-[25px] px-4 py-2 w-60 bg-purple-600 border-solid border-2 rounded-lg mobile:w-[308px] mobile:h-[48px] mobile:text-[14px] mobile:-ml-5"
                      >Saya ingin nego</Button>
 
                 

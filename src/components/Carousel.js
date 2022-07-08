@@ -13,29 +13,30 @@ import { Pagination } from "swiper";
 export default function Carousel() {
   return (
     <>
-      <Swiper pagination={true} modules={[Pagination]} className="mySwiper w-1/2 mt-10">
+      <Swiper pagination={true} modules={[Pagination]} className="mySwiper w-[600px] h-[436px] pl-[100px] mobile:w-[300px] mobile:h-[230px] mt-10 mobile:static  mobile:-mt-7">
         <SwiperSlide>
             <img src="/assets/Jamcasio.png"
-            className="ml-36 rounded-xl"/>
+            className=" p-2 mobile:p-2 mobile:w-[360px] mobile:h-[240px] mobile:fixed"/>
         </SwiperSlide>
         <SwiperSlide>
             <img src="/assets/Jamcasio.png"
-            className="ml-36 rounded-xl shadow-lg"/>
+            className=" p-2 mobile:p-2"/>
         </SwiperSlide>
         <SwiperSlide>
             <img src="/assets/Jamcasio.png"
-            className="ml-36 rounded-xl shadow-lg"/>
+            className=" p-2 mobile:p-2"/>
         </SwiperSlide>
         <SwiperSlide>
             <img src="/assets/Jamcasio.png"
-            className="ml-36 rounded-xl shadow-lg"/>
+            className=" p-2 mobile:p-2"/>
         </SwiperSlide>
         <SwiperSlide>
             <img src="/assets/Jamcasio.png"
-            className="ml-36 rounded-xl shadow-lg"/>
+            className=" p-2 mobile:p-2"/>
         </SwiperSlide>
+        
         
       </Swiper>
     </>
   );
-}
+  }
