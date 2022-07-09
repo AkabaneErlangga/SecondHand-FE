@@ -19,16 +19,16 @@ const Banner = () => {
           clickable: true,
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper w-full h-full"
       >
         <SwiperSlide>
-          <img src="/assets/banner.png" alt="" />
+          <img className="block w-full h-full object-cover" src="/assets/banner.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/assets/banner.png" alt="" />
+          <img className="block w-full h-full object-cover" src="/assets/banner.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/assets/banner.png" alt="" />
+          <img className="block w-full h-full object-cover" src="/assets/banner.png" alt="" />
         </SwiperSlide>
       </Swiper>
     </div>
