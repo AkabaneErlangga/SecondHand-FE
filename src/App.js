@@ -5,6 +5,9 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import InfoPenawar from "./pages/InfoPenawar"
 import InfoProduk from "./pages/InfoProduk";
+import ProductPageBuyer from "./pages/ProductPageBuyer"
+import ProductPage from "./pages/ProductPage"
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +18,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/info-penawar" element={<InfoPenawar />} />
         <Route path="/info-product" element={<InfoProduk />} />
+        <Route path="/product" element={<ProductPageBuyer />} />
+        <Route path="/product-seller" element={<ProductPage />} />
       </Routes>
     </div>
   );
