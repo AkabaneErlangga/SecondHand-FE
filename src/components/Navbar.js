@@ -1,12 +1,47 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
-import {faBell} from '@fortawesome/free-solid-svg-icons'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
-import {faBox} from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBox } from '@fortawesome/free-solid-svg-icons'
+import { FiLogIn } from "react-icons/fi";
+import { Link, useNavigate } from 'react-router-dom';
+import NotificationCard from './NotificationCard';
 
-const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+const Navbar = ({ isLogin }) => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [showNotif, setShowNotif] = useState(false)
+  const navigate = useNavigate()
+  const hasWindow = typeof window !== 'undefined';
+
+  function getWindowDimensions() {
+    const width = hasWindow ? window.innerWidth : null;
+    const height = hasWindow ? window.innerHeight : null;
+    return {
+      width,
+      height,
+    };
+  }
+
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    if (hasWindow) {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, [hasWindow]);
+
+  const handleNotif = () => {
+    if (windowDimensions.width > 1024)
+      setShowNotif(!showNotif)
+    else 
+      navigate('/notification')
+  }
+
   return (
     <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 md:mb-3">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -38,35 +73,52 @@ const Navbar = () => {
                 <input type="text" id="search-navbar" className="my-3 lg:my-0 block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 " placeholder="Search..." />
               </div>
             </li>
-            <li className="nav-item">
-              <a
-                className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full"
-                href="#pablo"
-              >
-                <h5 className='lg:hidden'>Products</h5>
-                <FontAwesomeIcon icon={faBox} size={'2x'} className="leading-lg opacity-75 hidden md:block" />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full"
-                href="#pablo"
-              >
-                <h5 className='lg:hidden'>Notification</h5>
-                <FontAwesomeIcon icon={faBell} size={'2x'} className="leading-lg opacity-75 hidden md:block"/>
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link to="/profile"
-                className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full"
-                href="#pablo"
-              >
-                <FontAwesomeIcon icon={faUser} size={'2x'} className="mr-1 leading-lg opacity-75 hidden md:block"/>
-                <h5 className='lg:hidden'>Profile</h5>
-              </Link>
-            </li>
+            {isLogin ?
+              <>
+                <li className="nav-item">
+                  <Link to="/product"
+                    className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full"
+                    href="#pablo"
+                  >
+                    <h5 className='lg:hidden'>Products</h5>
+                    <FontAwesomeIcon icon={faBox} size={'2x'} className="leading-lg opacity-75 hidden lg:block" />
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <div
+                    className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full cursor-pointer"
+                    onClick={handleNotif}
+                  >
+                    <h5 className='lg:hidden'>Notification</h5>
+                    <FontAwesomeIcon icon={faBell} size={'2x'} className="leading-lg opacity-75 hidden lg:block" />
+                  </div>
+                </li>
+                <li className="nav-item">
+                  <Link to="/profile"
+                    className="h-full min-h-[37px] flex items-center text-xs uppercase font-bold leading-snughover:opacity-75 md:w-full"
+                    href="#pablo"
+                  >
+                    <h5 className='lg:hidden'>Profile</h5>
+                    <FontAwesomeIcon icon={faUser} size={'2x'} className="mr-1 leading-lg opacity-75 hidden lg:block" />
+                  </Link>
+                </li>
+              </>
+              :
+              <li className="nav-item">
+                <Link to="/login"
+                  className="shadow-md mb-5 block text-md text-center w-28 h-10 py-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-blue-700 hover:font-bold lg:mt-0"
+                >
+                  {" "}
+                  <span className="px-2">
+                    <FiLogIn class="absolute z-10 text-center mx-5 mt-1" />
+                  </span>
+                  Masuk
+                </Link>
+              </li>
+            }
           </ul>
         </div>
+        {showNotif && windowDimensions.width>1024 ? <NotificationCard /> : ""}
       </div>
     </nav>
 
