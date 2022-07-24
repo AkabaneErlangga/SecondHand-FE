@@ -13,6 +13,7 @@ import Terjual from "./pages/Product/Terjual";
 import ProductList from "./pages/Product/ProductList";
 import Wishlist from "./pages/Product/Wishlist";
 import PrivateRoute from "./utils/PrivateRoute";
+import Notification from "./pages/Notification";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/product/:id" element={<PrivateRoute element={ProductPageBuyer} />} />
         <Route path="/product-seller" element={<PrivateRoute element={ProductPage} />} />
         <Route path="/daftar-jual" element={<PrivateRoute element={DaftarJual} />} />
+        <Route path="/notification" element={<PrivateRoute element={Notification} />} />
 
         <Route path="product/">
           <Route index element={<PrivateRoute element={ProductList} />} />
