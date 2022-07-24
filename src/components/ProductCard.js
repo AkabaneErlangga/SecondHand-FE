@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ProductCard = (item) => {
-  console.log(item);
   const data = item.item
   return (
     <div className='border-2 border-grey-lightest p-2 w-full'>

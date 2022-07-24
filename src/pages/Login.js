@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Cookies from "js-cookie";
+import { isLogin, login } from '../utils/Auth';
 
 const Login = () => {
 	const [open, setOpen] = useState(false)
@@ -14,6 +15,11 @@ const Login = () => {
 		setOpen(!open)
 	}
 
+	useEffect(() => {
+		if (isLogin())
+			navigate("/")
+	}, [])
+
 	const onSubmit = () => {
 		if (email && password) {
 			axios.post("https://secondhandapi.herokuapp.com/v1/auth/login", {
@@ -21,7 +27,7 @@ const Login = () => {
 				password: password
 			})
 				.then((res) => {
-					console.log(res);
+					login(res.data.token)
 					Cookies.set("SeconhandToken", res.data.token);
 					navigate('/')
 				})

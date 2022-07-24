@@ -17,7 +17,7 @@ const ProfilSeller = () => {
             {profile &&
                 <div className="flex w-80 shadow-md mt-10  mobile:ml-10 rounded-lg mobile:w-72">
                     <div className="mt-3 mb-3 ml-5">
-                        <img src={profile.avatar} alt="" />
+                        <img className="h-14" src={profile.avatar} alt="" />
                     </div>
                     <div className="ml-5 mt-2">
                         <h1>{profile.name}</h1>
