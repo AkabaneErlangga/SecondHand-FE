@@ -12,6 +12,7 @@ import Diminati from "./pages/Product/Diminati";
 import Terjual from "./pages/Product/Terjual";
 import ProductList from "./pages/Product/ProductList";
 import Wishlist from "./pages/Product/Wishlist";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   return (
@@ -20,22 +21,20 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/info-penawar" element={<InfoPenawar />} />
-        <Route path="/tambah-product" element={<InfoProduk />} />
-        <Route path="/product/:id" element={<ProductPageBuyer />} />
-        <Route path="/product-seller" element={<ProductPage />} />
-        <Route path="/daftar-jual" element={<DaftarJual />} />
+        <Route path="/profile" element={<PrivateRoute element={Profile} />} />
+        <Route path="/info-penawar" element={<PrivateRoute element={InfoPenawar} />} />
+        <Route path="/tambah-product" element={<PrivateRoute element={InfoProduk} />} />
+        <Route path="/product/:id" element={<PrivateRoute element={ProductPageBuyer} />} />
+        <Route path="/product-seller" element={<PrivateRoute element={ProductPage} />} />
+        <Route path="/daftar-jual" element={<PrivateRoute element={DaftarJual} />} />
 
-        <Route path="product/"  >
-          <Route index element={<ProductList />} />
-          {/* <Route path="product/:id" element={<ProductPagebuyer />} /> */}
-          {/* <Route path="productpreview/:id" element={<ProductPreview />} /> */}
-          <Route path="addproduct" element={<InfoProduk />} />
-          {/* <Route path="editproduct" element={<EditProduct />} /> */}
-          <Route path="diminati" element={<Diminati />} />
-          <Route path="terjual" element={<Terjual />} />
-          <Route path="wishlist" element={<Wishlist />} />
+        <Route path="product/">
+          <Route index element={<PrivateRoute element={ProductList} />} />
+          <Route path="addproduct" element={<PrivateRoute element={InfoProduk} />} />
+          {/* <Route path="editproduct" element={<PrivateRoute element={EditProduct} />} /> */}
+          <Route path="diminati" element={<PrivateRoute element={Diminati} />} />
+          <Route path="terjual" element={<PrivateRoute element={Terjual} />} />
+          <Route path="wishlist" element={<PrivateRoute element={Wishlist} />} />
           {/* <Route path="infopenawaran" element={<InfoPenawaran />} /> */}
         </Route>
         {/* <Route path="notification" element={<Notification />} />

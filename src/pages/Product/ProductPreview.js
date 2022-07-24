@@ -18,21 +18,9 @@ const ProductPreview = () => {
         `https://binar-second-hand.herokuapp.com/api/v1/product/${params.id}`
       )
       .then((res) => {
-        console.log(res.data);
-        if (res.data !== null) {
-          setProduct({ ...res.data.product });
-        } else {
-      //     return Promise.reject({
-      //       message: "error",
-      //     });
-        }
-      // })
-      // .catch((error) => {
-      //   console.log(error);
+        setProduct({ ...res.data.product });
       });
   }, [params.id]);
-
-  console.log(product);
 
   return (
     <div className="container mx-auto w-fit lg:max-w-4xl md:my-5">
